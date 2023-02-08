@@ -1,5 +1,9 @@
 from flask import Flask,request,json
 
+import ssl
+context = ssl.SSLContext()
+context.load_cert_chain('server.crt', 'server.key')
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -27,4 +31,4 @@ def test2():
     return data
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=8443)
+    app.run(debug=True, host='0.0.0.0', port=8443, ssl_context=context)
