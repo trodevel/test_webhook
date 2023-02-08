@@ -20,5 +20,11 @@ def test():
     print(f'Issue {data["value"]}')
     return data
 
+@app.route('/test2',methods=['POST'])
+def test2():
+    data = request.json
+    print(f'Issue {data["value"]}')
+    return data
+
 if __name__ == '__main__':
     app.run(debug=True)
