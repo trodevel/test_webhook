@@ -14,5 +14,11 @@ def githubIssue():
     print(f'{data["issue"]["url"]}')
     return data
 
+@app.route('/test',methods=['GET'])
+def test():
+    data = request.json
+    print(f'Issue {data["value"]}')
+    return data
+
 if __name__ == '__main__':
     app.run(debug=True)
