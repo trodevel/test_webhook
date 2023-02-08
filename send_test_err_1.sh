@@ -2,4 +2,7 @@
 
 source config.cfg
 
-curl -H "Content-type: application/json" -H "Accept: application/json" -XPOST "$API/test" -d '{"value":5}'
+REQ="test"
+TYPE=POST
+
+curl -H "Content-type: application/json" -H "Accept: application/json" -X${TYPE} "$API/${REQ}" -d '{"value":5}'
