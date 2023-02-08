@@ -6,4 +6,4 @@ REQ="test"
 TYPE=POST
 DATA="{\"value\":5}"
 
-curl -H "Content-type: application/json" -H "Accept: application/json" -X${TYPE} "$API/${REQ}" -d $DATA
+source _send_api_request.sh
