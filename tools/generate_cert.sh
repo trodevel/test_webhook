@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Source: https://core.telegram.org/bots/self-signed
+
 DOMAIN_NAME=$1
 
 [[ -z $DOMAIN_NAME ]] && echo "ERROR: DOMAIN_NAME is not defined" && exit 1
