@@ -1,4 +1,5 @@
 from flask import Flask,request,json
+import flask
 
 import ssl
 context = ssl.SSLContext()
@@ -6,9 +7,14 @@ context.load_cert_chain('YOURPUBLIC.pem', 'YOURPRIVATE.key')
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello():
-    return 'Webhooks with Python'
+    if request.method == 'POST':
+        msg = request.get_json()
+        print(msg)
+        return flask.Response('ok', status=200)
+    else:
+        return "<h1>Welcome!</h1>"
 
 @app.route('/githubIssue',methods=['POST'])
 def githubIssue():
