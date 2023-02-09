@@ -2,7 +2,7 @@ from flask import Flask,request,json
 
 import ssl
 context = ssl.SSLContext()
-context.load_cert_chain('server.crt', 'server.key')
+context.load_cert_chain('YOURPUBLIC.pem', 'YOURPRIVATE.key')
 
 app = Flask(__name__)
 
